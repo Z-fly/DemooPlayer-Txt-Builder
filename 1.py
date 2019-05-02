@@ -11,7 +11,7 @@ class mywindow(QWidget, Ui_MainWindow):
         self.setupUi(self)
 
     def save(self):
-        fileName, ok = QFileDialog.getSaveFileName(self, "Save", "./", "Text Files (*.txt)")
+        fileName, ok = QFileDialog.getSaveFileName(self, "Save", "./", "(*.txt)")
         if fileName != "":
             txt = open(fileName, "w", encoding='shiftjis')
             txt.write("JSON " + self.line1.text() + "\n")
@@ -27,7 +27,7 @@ class mywindow(QWidget, Ui_MainWindow):
             txt.close()
 
     def read(self):
-        fileName, ok = QFileDialog.getOpenFileName(self, "打开文件", '/', "Images files (*.*)")
+        fileName, ok = QFileDialog.getOpenFileName(self, "Open", '/', "(*.*)")
         if fileName != "":
             with open(fileName, 'r') as f:
                 for i in f.readlines():
