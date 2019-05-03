@@ -31,26 +31,26 @@ class mywindow(QWidget, Ui_MainWindow):
         if fileName != "":
             with open(fileName, 'r') as f:
                 for i in f.readlines():
-                    if i[0:4] == "Name":
+                    if i[:4] == "Name":
                         self.line4.setText(i[5:-1])
-                    if i[0:6] == "Artist":
+                    if i[:6] == "Artist":
                         self.line5.setText(i[7:-1])
-                    if i[0:4] == "Extra":
+                    if i[:4] == "Extra":
                         self.line6.setText("3")
                         self.line7.setText(i[5:])
                         if self.line7.text()[-1] == "\n":
                             self.line7.setText(self.line7.text()[:-1])
-                    if i[0:4] == "Hard":
+                    if i[:4] == "Hard":
                         self.line6.setText("2")
                         self.line7.setText(i[5:])
                         if self.line7.text()[-1] == "\n":
                             self.line7.setText(self.line7.text()[:-1])
-                    if i[0:4] == "Normal":
+                    if i[:4] == "Normal":
                         self.line6.setText("1")
                         self.line7.setText(i[5:])
                         if self.line7.text()[-1] == "\n":
                             self.line7.setText(self.line7.text()[:-1])
-                    if i[0:4] == "Easy":
+                    if i[:4] == "Easy":
                         self.line6.setText("0")
                         self.line7.setText(i[5:])
                         if self.line7.text()[-1] == "\n":
